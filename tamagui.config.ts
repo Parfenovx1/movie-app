@@ -48,6 +48,7 @@ export const Title = styled(H1, {
 export const Subtitle = styled(SizableText, {
   color: '#38434D',
   size: '$9',
+  fontWeight: 400,
 });
 
 export const Button = styled(ButtonTamagui, {
