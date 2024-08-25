@@ -14,8 +14,13 @@ const Layout = () => {
       }}>
       <Stack.Screen
         name="index"
-        options={{ title: 'Favorites', headerLeft: () => <DrawerToggleButton tintColor="#fff" /> }}
+        options={{
+          title: 'My Favorites',
+          headerLeft: () => <DrawerToggleButton tintColor="#fff" />,
+        }}
       />
+      <Stack.Screen name="movie/[id]" options={{ title: '', headerBackTitle: 'Back' }} />
+      <Stack.Screen name="tv/[id]" options={{ title: '', headerBackTitle: 'Back' }} />
     </Stack>
   );
 };

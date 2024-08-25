@@ -11,7 +11,7 @@ type MovieCardProps = {
 
 const MovieCard = ({ movie }: MovieCardProps) => (
   <Link
-    href={`/(drawer)/home/${movie.media_type === 'movie' ? 'movie' : 'tv'}/${movie.id}`}
+    href={`/(drawer)/home/${movie?.media_type === 'movie' ? 'movie' : 'tv'}/${movie.id}`}
     asChild>
     <Card
       elevate
@@ -26,7 +26,7 @@ const MovieCard = ({ movie }: MovieCardProps) => (
           source={{ uri: generateImageWithBaseUrl(movie.poster_path) }}
           alt={movie.title}
           style={{ width: 150, height: 200 }}
-          sharedTransitionTag={`${movie.media_type === 'movie' ? 'movie' : 'tv'}-${movie.id}`}
+          sharedTransitionTag={`${movie?.media_type === 'movie' ? 'movie' : 'tv'}-${movie.id}`}
         />
       </Card.Header>
       <Card.Footer p={8}>

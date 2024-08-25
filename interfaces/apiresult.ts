@@ -49,13 +49,16 @@ export interface DetailsResultItem {
   poster_path: string;
   production_companies: Productioncompany[];
   production_countries: Productioncountry[];
-  release_date: string;
+  release_date?: string;
+  first_air_date?: string;
   revenue: number;
-  runtime: number;
+  runtime?: number;
+  episode_run_time: number[];
   spoken_languages: Spokenlanguage[];
   status: string;
   tagline: string;
-  title: string;
+  title?: string;
+  name?: string;
   video: boolean;
   vote_average: number;
   vote_count: number;
@@ -79,7 +82,37 @@ interface Productioncompany {
   origin_country: string;
 }
 
-interface Genre {
+export interface Genre {
   id: number;
   name: string;
+}
+
+export interface UpcomingResult {
+  dates: Dates;
+  page: number;
+  results: UpcomiResultItem[];
+  total_pages: number;
+  total_results: number;
+}
+
+export interface UpcomiResultItem {
+  adult: boolean;
+  backdrop_path: string;
+  genre_ids: number[];
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+}
+
+interface Dates {
+  maximum: string;
+  minimum: string;
 }
